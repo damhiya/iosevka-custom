@@ -77,6 +77,6 @@
           };
         };
       }) // {
-        overlays.default = final: prev: { iosevka-custom = self.packages; };
+        overlays.default = final: prev: { iosevka-custom = self.packages.${prev.system}; };
       };
 }

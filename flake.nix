@@ -10,7 +10,6 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        callPackage = pkgs.callPackage;
         origin = pkgs.iosevka;
         default = {
           no-cv-ss = true;
@@ -77,6 +76,8 @@
           };
         };
       }) // {
-        overlays.default = final: prev: { iosevka-custom = self.packages.${prev.system}; };
+        overlays.default = final: prev: {
+          iosevka-custom = self.packages.${prev.system};
+        };
       };
 }

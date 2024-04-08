@@ -12,9 +12,9 @@
         pkgs = nixpkgs.legacyPackages.${system};
         origin = pkgs.iosevka;
         default = {
-          no-cv-ss = true;
-          export-glyph-names = false;
-          no-ligation = true;
+          noCvSs = true;
+          exportGlyphNames = false;
+          noLigation = true;
         };
       in {
         packages = {
